@@ -1,29 +1,29 @@
 <!-- Buttons to add to the header. -->
-<core-navbar-buttons slot="end">
+<!-- <core-navbar-buttons slot="end">
     <ion-button fill="clear" (click)="openModuleSummary()" aria-haspopup="true" [attr.aria-label]="'core.info' | translate">
         <ion-icon name="fas-info-circle" slot="icon-only" aria-hidden="true"></ion-icon>
     </ion-button>
-</core-navbar-buttons>
+</core-navbar-buttons> -->
 
 <!-- Content. -->
-<core-loading [hideUntil]="!showLoading">
+<!-- <core-loading [hideUntil]="!showLoading"> -->
 
-    <!-- Activity info. -->
-    <core-course-module-info [module]="module" [description]="description" [component]="component" [componentId]="componentId"
+<!-- Activity info. -->
+<!-- <core-course-module-info [module]="module" [description]="description" [component]="component" [componentId]="componentId"
         [courseId]="courseId" [hasDataToSync]="!errorMessage && hasOffline" (completionChanged)="onCompletionChange()">
-    </core-course-module-info>
+    </core-course-module-info> -->
 
-    <!-- Warning message. -->
-    <ion-card class="core-info-card" *ngIf="scorm && scorm.warningMessage">
+<!-- Warning message. -->
+<!-- <ion-card class="core-info-card" *ngIf="scorm && scorm.warningMessage">
         <ion-item>
             <ion-icon name="fas-info-circle" slot="start" aria-hidden="true"></ion-icon>
             <ion-label>{{ scorm.warningMessage }}</ion-label>
         </ion-item>
-    </ion-card>
+    </ion-card> -->
 
-    <div *ngIf="scorm && !showLoading && !scorm.warningMessage">
-        <!-- Attempts status. -->
-        <ion-card *ngIf="(scorm.displayattemptstatus || offlineAttempts.length) && !skip">
+<!-- <div *ngIf="scorm && !showLoading && !scorm.warningMessage"> -->
+<!-- Attempts status. -->
+<!-- <ion-card *ngIf="(scorm.displayattemptstatus || offlineAttempts.length) && !skip">
             <ion-card-header class="ion-text-wrap">
                 <ion-card-title>{{ 'addon.mod_scorm.attempts' | translate }}</ion-card-title>
             </ion-card-header>
@@ -102,10 +102,10 @@
                     </ion-label>
                 </ion-item>
             </ion-list>
-        </ion-card>
+        </ion-card> -->
 
-        <!-- TOC. -->
-        <ion-card *ngIf="scorm && organizations && !skip &&
+<!-- TOC. -->
+<!-- <ion-card *ngIf="scorm && organizations && !skip &&
             ((scorm.displaycoursestructure && organizations.length) || organizations.length > 1)" class="addon-mod_scorm-toc">
             <ion-card-header class="ion-text-wrap">
                 <ion-card-title>{{ 'addon.mod_scorm.contents' | translate }}</ion-card-title>
@@ -125,9 +125,9 @@
                         <ion-spinner [attr.aria-label]="'core.loading' | translate"></ion-spinner>
                     </ion-label>
                 </ion-item>
-                <ion-item class="ion-text-wrap" *ngIf="scorm.displaycoursestructure && !loadingToc">
-                    <!-- If data shown doesn't belong to last attempt, show a warning. -->
-                    <ion-label>
+                <ion-item class="ion-text-wrap" *ngIf="scorm.displaycoursestructure && !loadingToc"> -->
+<!-- If data shown doesn't belong to last attempt, show a warning. -->
+<!-- <ion-label>
                         <p *ngIf="attemptToContinue">
                             {{ 'addon.mod_scorm.dataattemptshown' | translate:{number: attemptToContinue} }}
                         </p>
@@ -155,12 +155,12 @@
                 </ion-item>
             </ion-list>
         </ion-card>
-    </div>
+    </div> -->
 
-    <div collapsible-footer *ngIf="!showLoading" slot="fixed">
-        <div class="list-item-limited-width" *ngIf="scorm && !scorm.warningMessage">
-            <!-- Open in browser button. -->
-            <ng-container *ngIf="errorMessage">
+<!-- <div collapsible-footer *ngIf="!showLoading" slot="fixed">
+        <div class="list-item-limited-width" *ngIf="scorm && !scorm.warningMessage"> -->
+<!-- Open in browser button. -->
+<!-- <ng-container *ngIf="errorMessage">
                 <ion-item class="ion-text-wrap">
                     <ion-label>
                         <p class="text-danger">{{ errorMessage | translate }}</p>
@@ -170,22 +170,22 @@
                     {{ 'core.openinbrowser' | translate }}
                     <ion-icon name="fas-external-link-alt" slot="end" aria-hidden="true"></ion-icon>
                 </ion-button>
-            </ng-container>
+            </ng-container> -->
 
-            <!-- Warning that user doesn't have any more attempts. -->
-            <ion-card *ngIf="!errorMessage && attemptsLeft == 0" class="core-danger-card">
+<!-- Warning that user doesn't have any more attempts. -->
+<!-- <ion-card *ngIf="!errorMessage && attemptsLeft == 0" class="core-danger-card">
                 <ion-item class="ion-text-wrap">
                     <ion-label>
                         <p>{{ 'addon.mod_scorm.exceededmaxattempts' | translate }}</p>
                     </ion-label>
                 </ion-item>
-            </ion-card>
+            </ion-card> -->
 
-            <ng-container *ngIf="!errorMessage && (!scorm.lastattemptlock || attemptsLeft > 0)">
-                <!-- Open SCORM in app form -->
-                <ng-container *ngIf="!downloading && !skip">
-                    <!-- Create new attempt -->
-                    <ion-item class="ion-text-wrap" *ngIf="!scorm.forcenewattempt && numAttempts > 0 && !incomplete && attemptsLeft > 0">
+<!-- <ng-container *ngIf="!errorMessage && (!scorm.lastattemptlock || attemptsLeft > 0)"> -->
+<!-- Open SCORM in app form -->
+<!-- <ng-container *ngIf="!downloading && !skip"> -->
+<!-- Create new attempt -->
+<!-- <ion-item class="ion-text-wrap" *ngIf="!scorm.forcenewattempt && numAttempts > 0 && !incomplete && attemptsLeft > 0">
                         <ion-label>{{ 'addon.mod_scorm.newattempt' | translate }}</ion-label>
                         <ion-checkbox slot="end" name="newAttempt" [(ngModel)]="startNewAttempt">
                         </ion-checkbox>
@@ -197,9 +197,9 @@
                         </ion-label>
                     </ion-item>
 
-                    <div class="adaptable-buttons-row">
-                        <!-- Open mode (Preview or Normal) -->
-                        <ion-button *ngIf="!scorm.hidebrowse" expand="block" fill="outline" (click)="open($event, true)"
+                    <div class="adaptable-buttons-row"> -->
+<!-- Open mode (Preview or Normal) -->
+<!-- <ion-button *ngIf="!scorm.hidebrowse" expand="block" fill="outline" (click)="open($event, true)"
                             class="ion-text-wrap ion-margin">
                             <ion-icon name="fas-search" slot="start" aria-hidden="true"></ion-icon>
                             {{ 'addon.mod_scorm.browse' | translate }}
@@ -208,10 +208,10 @@
                             {{ 'addon.mod_scorm.enter' | translate }}
                         </ion-button>
                     </div>
-                </ng-container>
+                </ng-container> -->
 
-                <!-- Download progress. -->
-                <ion-item class="ion-text-center" *ngIf="downloading">
+<!-- Download progress. -->
+<!-- <ion-item class="ion-text-center" *ngIf="downloading">
                     <ion-label>
                         <ion-spinner [attr.aria-label]="'core.loading' | translate"></ion-spinner>
                         <p class="item-heading" *ngIf="progressMessage">{{ progressMessage | translate }}</p>
@@ -224,4 +224,4 @@
         <core-course-module-navigation [courseId]="courseId" [currentModuleId]="module.id">
         </core-course-module-navigation>
     </div>
-</core-loading>
+</core-loading> -->

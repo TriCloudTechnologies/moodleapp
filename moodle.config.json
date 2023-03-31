@@ -1,13 +1,14 @@
 {
-    "app_id": "com.moodle.moodlemobile",
-    "appname": "Moodle Mobile",
-    "versioncode": 41100,
-    "versionname": "4.1.1",
+    "app_id": "com.innopulse.correos",
+    "appname": "CORREOS-LMS",
+    "desktopappname": "Moodle Desktop",
+    "versioncode": 5500,
+    "versionname": "5.5.0",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
     "cache_update_frequency_rarely": 43200000,
-    "default_lang": "en",
+    "default_lang": "es",
     "languages": {
         "af": "Afrikaans",
         "ar": "عربي",
@@ -66,33 +67,33 @@
         "zh-tw": "正體中文"
     },
     "wsservice": "moodle_mobile_app",
-    "demo_sites": {
-        "student": {
-            "url": "https://school.moodledemo.net",
-            "username": "student",
-            "password": "moodle"
-        },
-        "teacher": {
-            "url": "https://school.moodledemo.net",
-            "username": "teacher",
-            "password": "moodle"
-        }
-    },
+    "demo_sites": {},
     "defaultZoomLevel": "none",
     "zoomlevels": {
         "none": 100,
         "medium": 110,
         "high": 120
     },
-    "customurlscheme": "moodlemobile",
-    "siteurl": "",
-    "sitename": "",
+    "font_sizes": [
+        62.5,
+        75.89,
+        93.75
+    ],
+    "customurlscheme": "correos",
+    "siteurl": "https://campuscorreos.iformalia.es",
+    "sitename": "Formación Correos",
     "multisitesdisplay": "",
     "sitefindersettings": {},
     "onlyallowlistedsites": false,
     "skipssoconfirmation": false,
     "forcedefaultlanguage": false,
-    "privacypolicy": "https://moodle.net/moodle-app-privacy/",
+    "privacypolicy": "https:\/\/moodle.org\/mod\/page\/view.php?id=8148",
+    "statusbarbgios": "#f98012",
+    "statusbarlighttextios": true,
+    "statusbarbgandroid": "#df7310",
+    "statusbarlighttextandroid": true,
+    "statusbarbgremotetheme": "#000000",
+    "statusbarlighttextremotetheme": true,
     "notificoncolor": "#f98012",
     "enableanalytics": false,
     "enableonboarding": true,
@@ -111,5 +112,6 @@
         "long": 3500,
         "sticky": 0
     },
-    "disableTokenFile": false
+    "disableTokenFile": false,
+    "notifications_enabled": true
 }
